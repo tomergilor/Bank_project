@@ -16,6 +16,12 @@ This scaffold intentionally includes only:
 
 You will implement the application code, page objects, and tests on top of it.
 
+TO run the server:
+cd C:\Users\tomer\UdemyPlaywrightPYTHONAutomationTesting\bank_project
+python -m app.server
+
+open browser: http://127.0.0.1:5000
+
 
 In order to run all or part of them, rum from terminal inside bank_project:
 
