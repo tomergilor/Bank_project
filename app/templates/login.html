@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .login-panel {
+            width: 100%;
+            max-width: 380px;
+            background: #ffffff;
+            border: 1px solid #dbe3ee;
+            border-radius: 8px;
+            padding: 32px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 0 0 24px;
+            color: #4b5563;
+        }
+
+        form {
+            display: grid;
+            gap: 16px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #c8d3e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 6px;
+            background: #0f62fe;
+            color: #ffffff;
+            padding: 12px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .error {
+            min-height: 20px;
+            color: #b91c1c;
+            font-size: 14px;
+        }
+
+        .demo-box {
+            margin-top: 20px;
+            padding: 12px;
+            background: #eef4ff;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="login-panel">
+            <h1>Bank Login</h1>
+            <p>Sign in to view your account summary.</p>
+
+            <div class="error" id="error-message">{{ error_message }}</div>
+
+            <form action="/login" method="post">
+                <div>
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" autocomplete="username">
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password">
+                </div>
+
+                <button id="login-button" type="submit">Login</button>
+            </form>
+
+            <div class="demo-box">
+                Demo user: <strong>tomer_admin</strong><br>
+                Password: <strong>Admin123</strong>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
