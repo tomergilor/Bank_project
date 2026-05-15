@@ -3,11 +3,9 @@ UI login test placeholder.
 """
 import pytest
 
-from tests.ui.pages.dashboard_page import DashboardPage
 from tests.ui.pages.login_page import LoginPage
+from tests.test_data import VALID_USER
 
-user_name = "tomer_admin"
-password =  "Admin123"
 
 pytestmark = pytest.mark.ui
 
@@ -30,6 +28,6 @@ def test_account_information(logged_in_dashboard):
 def test_login_failed(driver):
     login_page = LoginPage(driver)
     login_page.open()
-    login_page.login("wrong_user", password)
+    login_page.login("wrong_user", VALID_USER["password"])
 
     assert login_page.get_error_message() == "Invalid username or password."

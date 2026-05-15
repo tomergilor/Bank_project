@@ -3,8 +3,8 @@ API login test placeholder.
 """
 import pytest
 import requests
-
-BASE_URL = "http://127.0.0.1:5000"
+from tests.config import BASE_URL
+from tests.test_data import VALID_USER, INACTIVE_USER
 
 pytestmark = pytest.mark.api
 
@@ -13,8 +13,8 @@ def test_api_login_success():
 
     response = requests.post(f"{BASE_URL}/api/login",
         json={
-            "username": "tomer_admin",
-            "password": "Admin123"
+            "username": VALID_USER["username"],
+            "password": VALID_USER["password"]
         }
     )
     # print(response.json())
@@ -39,7 +39,7 @@ def test_api_login_failed():
     response = requests.post(
         f"{BASE_URL}/api/login",
         json={
-            "username": "tomer_admin",
+            "username": VALID_USER["username"],
             "password": "WrongPassword"
         }
     )
@@ -72,8 +72,8 @@ def test_api_inactive_user():
 
     response = requests.post(f"{BASE_URL}/api/login",
         json={
-            "username": "ron_guest",
-            "password": "Ron123"
+            "username": INACTIVE_USER["username"],
+             "password": INACTIVE_USER["password"]
         }
     )
 

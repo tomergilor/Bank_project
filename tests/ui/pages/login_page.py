@@ -5,12 +5,10 @@ Login page object placeholder.
 from selenium.webdriver.common.by import By
 
 from tests.ui.pages.base_page import BasePage
+from tests.config import BASE_URL
 
 
 class LoginPage(BasePage):
-
-    URL = "http://127.0.0.1:5000/"
-
 
     USERNAME_INPUT = (By.ID, "username")
     PASSWORD_INPUT = (By.ID, "password")
@@ -19,7 +17,7 @@ class LoginPage(BasePage):
 
 
     def open(self):
-        self.driver.get(self.URL)
+        self.driver.get(BASE_URL)
 
 
     def insert_username(self, username):
