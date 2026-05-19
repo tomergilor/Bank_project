@@ -1,6 +1,4 @@
-"""
-UI login test placeholder.
-"""
+
 import pytest
 
 from tests.ui.pages.login_page import LoginPage

@@ -17,10 +17,6 @@ def test_api_login_success():
             "password": VALID_USER["password"]
         }
     )
-    # print(response.json())
-    # print(response.status_code)
-    # print(response.text)
-    # print(response.json())
 
     assert response.status_code == 200
 
@@ -28,7 +24,6 @@ def test_api_login_success():
     print(response_body)
 
     assert response_body["success"] is True
-
     assert response_body["user"]["username"] == "tomer_admin"
     assert response_body["user"]["last_name"] == "Gil-Or"
     assert response_body["user"]["role"] == "admin"
